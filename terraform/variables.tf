@@ -1,15 +1,26 @@
 variable "aws_region" {
-  default = "us-east-1"
+  description = "AWS Region"
+  type        = string
+  default     = "us-east-1"
 }
 
 variable "instance_type" {
-  default = "t2.micro"
+  description = "EC2 Instance Type"
+  type        = string
+  default     = "t3.micro"
 }
 
 variable "key_name" {
-  description = "Existing EC2 key pair"
+  description = "EC2 Key Pair Name"
+  type        = string
 }
 
-variable "my_ip" {
-  description = "Your public IP"
+variable "allowed_ssh_cidr" {
+  description = "Allowed SSH CIDR"
+  type        = list(string)
+}
+
+variable "allowed_app_cidr" {
+  description = "Allowed Application CIDR"
+  type        = list(string)
 }
